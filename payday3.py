@@ -10,7 +10,7 @@ def display(combinations):
         print(''.join(combination))
 
 def show_help():
-    print("Payday3 combination bruteforcer. Run as 'payday3.py INPUT'. Payday3 uses four digit combinations.")
+    print("Payday 3 combination bruteforcer. Run as 'payday3.py INPUT'. Payday uses four digit combinations. Input can be 2, 3, or 4 digits.")
 
 if __name__ == '__main__':
     if len(sys.argv) != 2 or sys.argv[1] == '-h':
@@ -18,8 +18,8 @@ if __name__ == '__main__':
         sys.exit()
 
     digits = sys.argv[1]
-    if len(digits) != 4:
-        print("Provide exactly four digits or use 'payday3.py -h' for help.")
+    if len(digits) not in [2, 3, 4]:
+        print("Provide 2, 3, or 4 digits. Use 'payday3.py -h' for help.")
         sys.exit()
 
     combinations = generate(digits)
